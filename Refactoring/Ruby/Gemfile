@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+gem 'guard'
+gem 'rake'
+gem 'rubocop'
+
 group :test do
   gem 'mocha', '1.1.0'
   gem 'rspec', '3.3.0'
