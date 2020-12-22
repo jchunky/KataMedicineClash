@@ -17,9 +17,3 @@ class Integer
     Date.today + self
   end
 end
-
-class Date
-  def advance(options = {})
-    self + (options[:days] || 0)
-  end
-end
