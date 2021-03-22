@@ -10,8 +10,7 @@ gem "whats_up"
 
 # test
 gem "minitest"
-gem "mocha", "1.1.0"
-gem "rspec", "3.3.0"
+gem "rspec"
 gem "test-unit"
 
 # minitest
