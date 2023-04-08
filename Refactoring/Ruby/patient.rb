@@ -11,7 +11,7 @@ class Patient
     medicines
       .select { |medicine| medicine_names.include?(medicine.name) }
       .map(&:days_taken)
+      .push(date_range.to_a)
       .reduce(&:&)
-      .select { |date| date_range.include?(date) }
   end
 end
