@@ -7,8 +7,6 @@ class Medicine
   end
 
   def days_taken
-    prescriptions
-      .flat_map(&:days_taken)
-      .uniq
+    prescriptions.flat_map(&:days_taken).uniq
   end
 end
