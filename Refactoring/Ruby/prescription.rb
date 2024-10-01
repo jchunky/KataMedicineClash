@@ -1,14 +1,14 @@
 class Prescription
   attr_reader :dispense_date, :days_supply
 
-  def initialize(options = {})
-    @dispense_date = options[:dispense_date] ||= Date.today
-    @days_supply = options[:days_supply] ||= 30
+  def initialize(dispense_date:, days_supply:)
+    @dispense_date = dispense_date
+    @days_supply = days_supply
   end
 
   def <=>(other)
-    return -1 if dispense_date.nil?
-    return 1 if other.dispense_date.nil?
+    return -1 unless dispense_date
+    return 1 unless other.dispense_date
 
     dispense_date <=> other.dispense_date
   end

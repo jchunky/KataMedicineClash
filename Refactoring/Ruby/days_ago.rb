@@ -2,7 +2,7 @@ require "date"
 
 class Integer
   def day
-    days
+    self
   end
 
   def days
@@ -15,11 +15,5 @@ class Integer
 
   def from_now
     Date.today + self
-  end
-end
-
-class Date
-  def advance(options = {})
-    self + (options[:days] || 0)
   end
 end
