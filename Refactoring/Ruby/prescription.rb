@@ -1,5 +1,4 @@
 class Prescription
-
   attr_reader :dispense_date, :days_supply
 
   def initialize(options = {})
@@ -10,14 +9,15 @@ class Prescription
   def <=>(other)
     return -1 if dispense_date.nil?
     return 1 if other.dispense_date.nil?
+
     dispense_date <=> other.dispense_date
+  end
+
+  def days_taken
+    (dispense_date...completion_date).to_a
   end
 
   def completion_date
     dispense_date + days_supply
-  end
-
-  def days_taken
-    (dispense_date...(dispense_date + days_supply)).to_a
   end
 end
