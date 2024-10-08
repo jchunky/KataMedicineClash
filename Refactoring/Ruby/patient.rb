@@ -6,9 +6,13 @@ class Patient
   end
 
   def clash(medicine_names, days_back)
+    today = Date.today
+    date_range = (today - days_back...today)
+
     medicines
       .select { |medicine| medicine_names.include?(medicine.name) }
-      .map { |medicine| medicine.dates_prescribed_in_effective_range(days_back) }
+      .map(&:days_taken)
       .reduce(&:&)
+      .select { |date| date_range.cover?(date) }
   end
 end

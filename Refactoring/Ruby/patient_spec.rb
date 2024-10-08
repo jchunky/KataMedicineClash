@@ -97,7 +97,7 @@ describe Patient do
         @prozac.prescriptions << Prescription.new(dispense_date: 119.days.ago, days_supply: 30)
       end
 
-      xit "returns only the days both were taken that fall within the last 90 days" do
+      it "returns only the days both were taken that fall within the last 90 days" do
         expect(@patient.clash(%w[Codeine Prozac], 90)).to eq([90.days.ago])
       end
     end

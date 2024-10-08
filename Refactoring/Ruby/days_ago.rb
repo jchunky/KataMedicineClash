@@ -17,9 +17,3 @@ class Integer
     Date.today + self
   end
 end
-
-class Date
-  def advance(days: 0)
-    self + days
-  end
-end
