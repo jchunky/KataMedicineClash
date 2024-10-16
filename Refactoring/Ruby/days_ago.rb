@@ -1,6 +1,6 @@
 require 'date'
 
-class Fixnum
+class Integer
   def day
      days
   end
