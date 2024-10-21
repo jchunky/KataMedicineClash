@@ -7,7 +7,7 @@ describe Patient do
   before do
     @patient = Patient.new
     @codeine = Medicine.new("Codeine")
-    @prozac = Medicine.new("Prozac")
+    @prozac  = Medicine.new("Prozac")
     @patient.medicines << @codeine
     @patient.medicines << @prozac
   end
