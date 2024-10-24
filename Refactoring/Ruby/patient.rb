@@ -6,7 +6,7 @@ class Patient
   end
 
   def clash(medicine_names, days_back)
-    today      = Date.today
+    today = Date.today
     date_range = (today - days_back...today)
 
     medicines
